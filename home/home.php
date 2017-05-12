@@ -14,6 +14,36 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript">
+			google.charts.load('current', {packages: ['corechart', 'line']});
+			google.charts.setOnLoadCallback(drawBasic);
+
+			function drawBasic() {
+
+			      var data = new google.visualization.DataTable();
+			      data.addColumn('number', 'X');
+			      data.addColumn('number', 'Lucro');
+
+			      data.addRows([
+			        [1, <?php echo rand();?>],   [2, <?php echo rand();?>],  [3, <?php echo rand();?>],  [4, <?php echo rand();?>],  [5, <?php echo rand();?>],
+			        [6, <?php echo rand();?>]
+			      ]);
+
+			      var options = {
+			        hAxis: {
+			          title: 'Mês'
+			        },
+			        vAxis: {
+			          title: 'Lucro'
+			        }
+			      };
+
+			      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+			      chart.draw(data, options);
+			    }
+		</script>
 	</head>
 	<body>
 
@@ -38,15 +68,15 @@
 												<p>Total de despesas - R$2.000.000,00</p>
 												<p>Total de lucro - R$5.000.000,00</p>
 												Caixa<h3><p>R$3.000.000,00</p></h3>
-											</div>
-											<div class="6u 12u$(small)">
-												<center><h3>Gráficos</h3></center>
-												<p><img src="images/grafico.png"></p>
-											</div>
+									</div>
+									<div class="6u 12u$(small)">
+									<h3><center>Lucro dos ultimos seis meses</center></h3>
+									<center><div id="chart_div"></div></center>
+									</div>
 								</div>
 								<br>
 								<div class="row"> <!-- 6 + 6 = 12 -->
-    								<div class="6u 12u$(small)">
+    								<div class="12u 12u$(small)">
 												<center><h3>Lançamentos Futuros (30 dias)</h3></center>
 												<table>
 															<thead>
@@ -90,10 +120,6 @@
 																</tr>
 															</tfoot>
 														</table>
-											</div>
-											<div class="6u 12u$(small)">
-												<h3>Não sabemos oq por ainda</h3>
-												<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat commodo eu sed ante lacinia. Sapien a lorem in integer ornare praesent commodo adipiscing arcu in massa commodo lorem accumsan at odio massa ac ac. Semper adipiscing varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
 											</div>
 								</div>
 						</div>
