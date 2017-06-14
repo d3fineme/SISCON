@@ -142,26 +142,9 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="home.html">Início</a></li>
-										<li>
-											<span class="opener">Transações</span>
-											<ul>
-												<li><a href="venda.html">Vendas</a></li>
-												<li><a href="despesa.html">Despesas</a></li>
-												<li><a href="recebimento.html">Recebimento</a></li>
-												<li><a href="emprestimo.html">Empréstimos</a></li>
-												<li><a href="investimento.html">Investimentos</a></li>
-												<li><a href="compramercadoria.html">Compras de Mercadorias</a></li>
-											</ul>
-										</li>
-										<li>
-											<span class="opener">Relatórios</span>
-											<ul>
-												<li><a href="#">Balanço Patrimonial</a></li>
-												<li><a href="#">Demonstrativo de Resultado</a></li>
-												<li><a href="#">Demonstrativo de Fluxo de Caixa</a></li>
-											</ul>
-										</li>
+										<li><a href="home.php">Início</a></li>
+										<li><a href="#">Índices</a></li>
+										<li><a href="#">Gerar Relatórios</a></li>
 										<ul>
 											<li><a href="../index.html" align="right">Sair</a></li>
 										</ul>
