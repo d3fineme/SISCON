@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Últimos Índices</title>
+		<title>Remover Dados</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="icon" href="../images/icon.png">
@@ -23,7 +23,7 @@
 				<!-- Main -->
 					<div id="main">
 
-                        <iframe src="../contabilidade/indices.php" style="border: 0; width: 100%; height: 100%"></iframe>
+                        <iframe src="../contabilidade/remover_dados.php" style="border: 0; width: 100%; height: 100%"></iframe>
 
 					</div>
 

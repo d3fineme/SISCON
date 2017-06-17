@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Últimos Índices</title>
+		<title>Inserir Índices</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="icon" href="../images/icon.png">
@@ -23,7 +23,7 @@
 				<!-- Main -->
 					<div id="main">
 
-                        <iframe src="../contabilidade/indices.php" style="border: 0; width: 100%; height: 100%"></iframe>
+                        <iframe src="../contabilidade/index.php" style="border: 0; width: 100%; height: 100%"></iframe>
 
 					</div>
 
@@ -44,9 +44,9 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-                                        <li><a href="home.php">Consultar últimos índices</a></li>
-                                        <li><a href="inserirCSV.php">Inserir Dados</a></li>
-                                        <li><a href="removerDados.php">Remover Dados Inseridos</a></li>
+										<li><a href="home.php">Consultar últimos índices</a></li>
+										<li><a href="inserirCSV.php">Inserir Dados</a></li>
+										<li><a href="removerDados.php">Remover Dados Inseridos</a></li>
 										<ul>
 											<li><a href="../index.html" align="right">Sair</a></li>
 										</ul>
