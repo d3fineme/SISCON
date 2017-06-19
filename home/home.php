@@ -14,6 +14,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+
 	</head>
 	<body>
 
@@ -22,9 +23,31 @@
 
 				<!-- Main -->
 					<div id="main">
-
+						<center><h3>Índices de Estrutura Capital</h3></center>
+						<div class="row"> <!-- 4 + 4 + 4 = 12 -->
+    						<div class="4u 12u$(small)">
+								<div><?php include "pct.php"; ?></div>
+							</div>
+							<div class="4u 12u$(small)">
+								<div><?php include "end.php"; ?></div>
+							</div>
+							<div class="4u 12u$(small)">
+								<div><?php include "ipl.php"; ?></div>
+							</div>
+						</div>
+						<center><h3>Índices de Liquidez</h3></center>
+						<div class="row"> <!-- 4 + 4 + 4 = 12 -->
+    						<div class="4u 12u$(small)">
+								<div><?php include "pct.php"; ?></div>
+							</div>
+							<div class="4u 12u$(small)">
+								<div><?php include "end.php"; ?></div>
+							</div>
+							<div class="4u 12u$(small)">
+								<div><?php include "pct.php"; ?></div>
+							</div>
+						</div>
                         <iframe src="../contabilidade/indices.php" style="border: 0; width: 100%; height: 100%"></iframe>
-
 					</div>
 
 				<!-- Sidebar -->
