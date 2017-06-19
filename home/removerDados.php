@@ -45,6 +45,7 @@
 									</header>
 									<ul>
                                         <li><a href="home.php">Consultar últimos índices</a></li>
+                                        <li><a href="historico.php">Consultar histórico de índices</a></li>
                                         <li><a href="inserirCSV.php">Inserir Dados</a></li>
                                         <li><a href="removerDados.php">Remover Dados Inseridos</a></li>
 										<ul>

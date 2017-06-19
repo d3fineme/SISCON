@@ -15,7 +15,7 @@ if (isset($_GET['id'])){
     $query = "delete from indices where ANO = '$ano';";
     mysql_query($query) or die (mysql_error());
 
-    header("Location: index.php");
+    header("Location: remover_dados.php");
 }
 
 function imprimeDados(){
@@ -33,6 +33,9 @@ function imprimeDados(){
             echo  "</tr>";
 
         }
+    }else{
+        echo '<div class="alert alert-danger" role="alert"><b><center>Nenhum dado inserido no sistema!</b></center></div>';
+        exit();
     }
 }
 

@@ -22,7 +22,7 @@
 
 				<!-- Main -->
 					<section id="main">
-						<header>
+						<p>
                             <form action="importCSV.php" method="post" enctype="multipart/form-data">
                                 <div class="field">
                                     <h1>Inserir novos dados</h1>
@@ -33,8 +33,9 @@
                                     <li><button type="submit">Enviar</button></li>
                                 </ul>
                             </form>
-                            <br>
-                            <a href="Modelo%20BP%20e%20DRE%20com%20pasta%20para%20envio%20para%20o%20site.xlsx">Arquivo Modelo para ser submetido</a>
+                            <a href="Modelo%20BP%20e%20DRE%20com%20pasta%20para%20envio%20para%20o%20site.xlsx">Arquivo Modelo para ser submetido</a></p>
+                        <font color="red" <b>ORIENTAÇÕES:</b></font> <br><li>Você deverá submeter um arquivo csv no padrão exato do modelo exemplo.</li>
+                        <li>O arquivo csv deverá ser sepado por ";" </li></p>
 						</header>
 						<!--
 						<hr />

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Índices <?php echo $ano;?></title>
+    <title>Índices</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -32,6 +32,52 @@ function classifica($diferenca, $temAnoAnteriorCadastrado){
         }
     }
 }
+
+function classificaPCT($PCT){
+    if($PCT>=0.5){
+        echo "<center xmlns=\"http://www.w3.org/1999/html\"><font color='red'><b>Alta</b> participação de capital externo na empresa.</font></center></p>";
+    }
+}
+
+function classificaEND($END){
+    if($END>=0.5){
+        echo "<center xmlns=\"http://www.w3.org/1999/html\"><b>Maior</b> endividamento no curto prazo.</center></p>";
+    }else{
+        echo "<center xmlns=\"http://www.w3.org/1999/html\"><b>Menor</b> endividamento no curto prazo.</center></p>";
+    }
+}
+function classificaLG($LG){
+    if($LG>=1){
+        echo "<center xmlns=\"http://www.w3.org/1999/html\"><font color='green'>As obrigações de Curto Prazo e Longo Prazo são <b>maiores</b> que o Ativo Circulante e Realizável Longo Prazo</font></center></p>";
+    }else{
+        echo "<center xmlns=\"http://www.w3.org/1999/html\"><font color='red'>As obrigações de Curto Prazo e Longo Prazo são <b>menores</b> que o Ativo Circulante e Realizável Longo Prazo</font></center></p>";
+    }
+}
+
+function classificaLC($LC){
+    if($LC>=1){
+        echo "<center xmlns=\"http://www.w3.org/1999/html\"><font color='green'>As obrigações de Curto Prazo são <b>maiores</b> que o Ativo Circulante</font></center></p>";
+    }else{
+        echo "<center xmlns=\"http://www.w3.org/1999/html\"><font color='red'>As obrigações de Curto Prazo são <b>menores</b> que o Ativo Circulante</font></center></p>";
+    }
+}
+
+function classificaLS($LS){
+    if($LS>=1){
+        echo "<center xmlns=\"http://www.w3.org/1999/html\"><font color='green'>As obrigações de Curto Prazo são <b>maiores</b> que o Ativo Disponível</font></center></p>";
+    }else{
+        echo "<center xmlns=\"http://www.w3.org/1999/html\"><font color='red'>As obrigações de Curto Prazo são <b>menores</b> que o Ativo Disponível</font></center></p>";
+    }
+}
+function classificaGA($GA){
+    if($GA>=1){
+        echo '<center><font color="green">As vendas representam '.($GA*100).'% do valor investido na empresa</font></center></p>';
+    }else{
+        echo "<center><font color='red'>As vendas representam ".(   $GA*100)."% do valor investido na empresa</font></center></p>";
+    }
+}
+
+
 
 $sql = mysql_query("select * from indices order by ano desc limit 1;");
 $consulta = mysql_fetch_array($sql);
@@ -98,17 +144,20 @@ if($PCTant){
 
 <body>
 <center><h1><b>ÍNDICES <?php echo $ano;?></b></h1></center><br>
-<h2><center>ÍNDICES DE ESTRUTURA DE CAPITAL</center></h2><br>
+<h2><center>ÍNDICES DE ESTRUTURA DE CAPITAL</center></h2></p>
 <div class="row">
     <div class="col-md-4">
         <h5><b><center>PARTICIPAÇÃO DE CAPITAL DE TERCEIROS –PCT</center></b></h5>
         <h3><center><?php echo $PCT*100;?>%</center></h3>
+        <?php classificaPCT($PCT);?>
         <center><?php echo classifica($difPCT*100,$temAnoAnteriorCadastrado);?></center>
     </div>
     <div class="col-md-4">
         <h5><b><center>COMPOSIÇÃO DO ENDIVIDAMENTO –END</center></b></h5>
         <h3><center><?php echo $END*100;?>%</center></h3>
+        <?php classificaEND($END);?>
         <center><?php echo classifica($difEND*100,$temAnoAnteriorCadastrado);?></center>
+
     </div>
     <div class="col-md-4">
         <h5><b><center>IMOBILIZAÇÃO DO PATRIMÔNIO LÍQUIDO –IPL</center></b></h5>
@@ -117,30 +166,34 @@ if($PCTant){
     </div>
 </div>
 <br>
-<h2><center>ÍNDICES DE LIQUIDEZ</center></h2><br>
+<h2><center>ÍNDICES DE LIQUIDEZ</center></h2></p>
 <div class="row">
     <div class="col-md-4">
         <h5><b><center>LIQUIDEZ GERAL –LG</center></b></h5>
         <h3><center><?php echo $LG?></center></h3>
+        <?php classificaLG($LG);?>
         <center><?php echo classifica($difLG*100,$temAnoAnteriorCadastrado);?></center>
     </div>
     <div class="col-md-4">
         <h5><b><center>LIQUIDEZ CORRENTE-LC</center></b></h5>
         <h3><center><?php echo $LC;?></center></h3>
+        <?php classificaLC($LC);?>
         <center><?php echo classifica($difLC*100,$temAnoAnteriorCadastrado);?></center>
     </div>
     <div class="col-md-4">
         <h5><b><center>LIQUIDEZ SECA-LS</center></b></h5>
         <h3><center><?php echo $LS; ?></center></h3>
+        <?php classificaLS($LS);?>
         <center><?php echo classifica($difLS*100,$temAnoAnteriorCadastrado);?></center>
     </div>
 </div>
 <br>
-<h2><center>ÍNDICES DE RENTABILIDADE</center></h2><br>
+<h2><center>ÍNDICES DE RENTABILIDADE</center></h2></p>
 <div class="row">
     <div class="col-md-3">
         <h5><b><center>GIRO DO ATIVO –GA</center></b></h5>
         <h3><center><?php echo $GA*100;?>%</center></h3>
+        <?php classificaGA($GA);?>
         <center><?php echo classifica($difGA*100,$temAnoAnteriorCadastrado);?></center>
     </div>
     <div class="col-md-3">
