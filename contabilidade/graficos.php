@@ -26,12 +26,20 @@
 			<br><br>
 					<center><h1>Índices de Estrutura Capital</h1></center>
 						<div><?php include "ipl.php"; ?></div>
+				</div>
+				<div><br></div>
+				<div id="main">
+			<br><br>
 					<center><h1>Índices de Liquidez</h1></center>
 						<div><?php include "liquidez.php"; ?></div>
-					<center><h1>Índices de Rentabilidade</h1></center>
-						<div><?php include "gaml.php"; ?></div>
-						<div><?php include "rarpl.php";?></div>
 				</div>
+				<div><br></div>
+				<div id="main">
+			<br><br>
+					<center><h1>Índices de Rentabilidade</h1></center>
+						<div><?php include "rentabilidade.php"; ?></div>
+				</div>
+
 				<footer id="footer">
 					<p class="copyright">&copy; Todos os direitos reservados || Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 				</footer>
