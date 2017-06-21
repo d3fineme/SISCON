@@ -42,30 +42,6 @@ function imprimeDados()
 
     }
 }
-/*
-$query = "SELECT * FROM indices order by ano_dado DESC";
-$sql = mysql_query($query) or die(mysql_error());
-$row = mysql_num_rows($sql);
-if($row){
-while ($linha = mysql_fetch_array($sql)) {
-$ano = $linha['ano_dado'];
-echo "<tr>";
-    echo     '<th scope="row"></th>';
-    echo     "<td><center>".$ano."</td>";
-    echo     "<td><center>".$ano."</td>";
-    echo     "<td><center>".$ano."</td>";
-    echo     "<td><center>".$ano."</td>";
-    echo     "<td><center>".$ano."</td>";
-    echo     "<td><center>".$ano."</td>";
-    echo     "<td><center>".$ano."</td>";
-    echo  "</tr>";
-
-}
-}else{
-echo '<div class="alert alert-danger" role="alert"><b><center>Nenhum dado inserido no sistema!</b></center></div>';
-exit();
-}
-}*/
 ?>
 
 <!DOCTYPE html>

@@ -1,3 +1,31 @@
+
+<?php
+
+//Conexao com o banco
+error_reporting (E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
+$host = "localhost";
+$user = "root";
+$pass = "";
+$banco = "contabilidade";
+$conexao = mysql_connect($host, $user, $pass);
+mysql_select_db($banco) or die (mysql_error());
+
+function imprimeRE()
+{
+
+    $sql = mysql_query("select * from indices order by ano") or die(mysql_error());
+    while ($consulta = mysql_fetch_array($sql)) {
+        $GA = $consulta[6];
+        $ML = $consulta[7];
+        $RA = $consulta[8];
+        $RPL = $consulta[9];
+        $ano = $consulta[10];
+
+        echo ",['".$ano."',".($GA*100).",".($ML*100).",".($RA*100).", ".($RPL*100)."]";
+    }
+}
+?>
+
 <!DOCTYPE html>
 
 <html lang="pt-BR">
@@ -9,10 +37,8 @@
 
       function drawChart() {
           var data = google.visualization.arrayToDataTable([
-              ['Período', 'GA', 'ML', 'RA', 'RPL'],
-              ['2014',  0.37, 0.65, 0.50, 0.6],
-              ['2015',  0.30, 0.33, 0.66, 0.5],
-              ['2016',  0.25, 0.11, 0.99, 0.7]
+              ['Período', 'GA', 'ML', 'RA', 'RPL']
+              <?php imprimeRE();?>
           ]);
 
           var options = {
