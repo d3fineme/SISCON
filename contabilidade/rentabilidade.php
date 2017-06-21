@@ -42,7 +42,7 @@ function imprimeRE()
           ]);
 
           var options = {
-              title: 'ÍNDICES DE RENTABILIDADE',
+              title: 'Índices calculados em porcentagem (%)',
               curveType: 'function',
               legend: { position: 'bottom' }
           };

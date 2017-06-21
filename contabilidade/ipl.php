@@ -41,7 +41,7 @@ function imprimeEC()
           ]);
 
           var options = {
-              title: 'ÍNDICES DE ESTRUTURA CAPITAL',
+              title: 'Índices calculados em porcentagem (%)',
               curveType: 'function',
               legend: { position: 'bottom' }
           };
